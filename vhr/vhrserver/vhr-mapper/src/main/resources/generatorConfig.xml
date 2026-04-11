@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库连接配置 -->
+    <context id="vhrTables" targetRuntime="MyBatis3">
+
+        <!-- 使用 MBG 默认的注释生成器，通过配置开启注释 -->
+        <commentGenerator>
+            <!-- 不删除所有注释 -->
+            <property name="suppressAllComments" value="false"/>
+            <!-- 不删除日期 -->
+            <property name="suppressDate" value="true"/>
+            <!-- 添加数据库字段注释 -->
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库连接信息 -->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/vhr?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;useInformationSchema=true"
+                        userId="root"
+                        password="1@Huangshu">
+            <!-- 关键：让JDBC能读取到表的注释信息 -->
+            <property name="useInformationSchema" value="true"/>
+        </jdbcConnection>
+
+        <!-- 实体类生成配置 -->
+        <javaModelGenerator targetPackage="org.javaboy.vhr.model"
+                            targetProject="../vhr-model/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- XML映射文件生成配置 -->
+        <sqlMapGenerator targetPackage="org/javaboy/vhr/mapper/base"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- Mapper接口生成配置 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="org.javaboy.vhr.mapper.base"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 指定要生成的表 -->
+        <table tableName="test_table" domainObjectName="TestTable" mapperName="TestTableBaseMapper"/>
+        <!-- 添加更多表... -->
+
+    </context>
+</generatorConfiguration>

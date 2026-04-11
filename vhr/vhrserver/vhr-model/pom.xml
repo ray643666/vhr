@@ -20,6 +20,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <!-- MyBatis Generator 核心依赖，提供 DefaultCommentGenerator 类 -->
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.4.2</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>

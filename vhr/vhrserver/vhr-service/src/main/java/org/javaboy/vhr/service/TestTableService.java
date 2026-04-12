@@ -1,6 +1,7 @@
 package org.javaboy.vhr.service;
 
 import com.alibaba.druid.util.StringUtils;
+import org.javaboy.vhr.exception.BusinessException;
 import org.javaboy.vhr.mapper.TestTableMapper;
 import org.javaboy.vhr.model.TestTable;
 import org.javaboy.vhr.model.TestTableExample;
@@ -57,7 +58,10 @@ public class TestTableService {
      * @return         删除条数
      */
     @Transactional
-    public int deleteTestTable(int id) {
-        return testTableMapper.deleteByPrimaryKey(id);
+    public int deleteTestTable(String id) {
+        if (StringUtils.isEmpty(id)) {
+            throw new BusinessException("测试表ID不能为空");
+        }
+        return testTableMapper.deleteByPrimaryKey(Integer.valueOf(id));
     }
 }

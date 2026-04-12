@@ -62,7 +62,7 @@ public class TestTableController {
      */
     @Log("删除测试表数据")
     @GetMapping("/deleteTestTable")
-    public Result<Void> deleteTestTable(@RequestParam int id) {
+    public Result<Void> deleteTestTable(@RequestParam String id) {
         // 查询测试表列表
         int result = testTableService.deleteTestTable(id);
         if (result != 0) {

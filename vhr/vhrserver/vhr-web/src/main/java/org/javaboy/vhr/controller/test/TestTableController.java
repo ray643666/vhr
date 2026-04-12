@@ -1,5 +1,6 @@
 package org.javaboy.vhr.controller.test;
 
+import org.javaboy.vhr.annotation.Log;
 import org.javaboy.vhr.enums.ResultCode;
 import org.javaboy.vhr.model.Result;
 import org.javaboy.vhr.model.TestTable;
@@ -27,6 +28,7 @@ public class TestTableController {
      * @param testTable     查询入参
      * @return              统一返回对象
      */
+    @Log("查询测试表列表")
     @PostMapping("/queryTestTable")
     public Result<List<TestTable>> queryTestTable(@RequestBody TestTable testTable) {
         // 查询测试表列表
@@ -42,6 +44,7 @@ public class TestTableController {
      * @param testTable     查询入参
      * @return              统一返回对象
      */
+    @Log("添加测试表数据")
     @PostMapping("/addTestTable")
     public Result<Void> addTestTable(@RequestBody TestTable testTable) {
         // 查询测试表列表
@@ -57,6 +60,7 @@ public class TestTableController {
      * @param id            删除ID
      * @return              统一返回对象
      */
+    @Log("删除测试表数据")
     @GetMapping("/deleteTestTable")
     public Result<Void> deleteTestTable(@RequestParam int id) {
         // 查询测试表列表

@@ -24,3 +24,7 @@ server:
 fastdfs:
   nginx:
     host: http://192.168.91.128/
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl.ClientWorker: WARN
+    com.alibaba.nacos.client.config.impl.CacheData: WARN

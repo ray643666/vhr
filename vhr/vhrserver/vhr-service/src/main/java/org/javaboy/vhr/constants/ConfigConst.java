@@ -13,10 +13,17 @@ public class ConfigConst {
     // 配置 Key
     public static final String KEY_FILE_UPLOAD_PATH = "vhr.file.upload-path";
     public static final String KEY_FILE_MAX_SIZE = "vhr.file.max-size";
-    public static final String KEY_EMPLOYEE_IMPORT_ENABLED = "vhr.employee.import.enabled";
-    public static final String KEY_EMPLOYEE_IMPORT_MAX_SIZE = "vhr.employee.import.max-size";
+    public static final String KEY_FILE_ALLOWED_EXTENSIONS = "vhr.file.allowed-extensions";
+    public static final String KEY_EMPLOYEE_IMPORT_ENABLED = "vhr.employee.enabled";
+    public static final String KEY_EMPLOYEE_IMPORT_MAX_SIZE = "vhr.employee.max-size";
+    public static final String KEY_EMPLOYEE_IMPORT_BATCH_SIZE = "vhr.employee.batch-size";
     public static final String KEY_SMS_API_URL = "vhr.sms.api-url";
+    public static final String KEY_SMS_APP_KEY = "vhr.sms.app-key";
+    public static final String KEY_SMS_APP_SECRET = "vhr.sms.app-secret";
+    public static final String KEY_SMS_TIMEOUT = "vhr.sms.timeout";
     public static final String KEY_SWITCH_AUDIT = "vhr.switches.audit-enabled";
+    public static final String KEY_SWITCH_EMAIL_NOTIFICATION = "vhr.switches.email-notification";
+    public static final String KEY_SWITCH_LOG_LEVEL = "vhr.switches.log-level";
 
     // 配置分组
     public static final String GROUP_FILE = "文件配置";
